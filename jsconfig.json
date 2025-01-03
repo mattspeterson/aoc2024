@@ -1,0 +1,7 @@
+{
+    "typeAcquisition": {
+        "include": [
+            "jquery", "lodash", "dayjs", "parsleyjs", "knockout", "fullcalendar", "toastr", "quill"
+        ]
+    }
+}
