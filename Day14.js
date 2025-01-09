@@ -53,11 +53,25 @@ function Solve1() {
     txtAnswer.value = counts.reduce((acc, cur) => acc * cur, 1);
 }
 
+// This doesn't actually find a Christmas tree, but the robots do have a recurring pattern
+// where they get bunched up every so often. So if you just loop and watch the console ouput, 
+// you'll see them arrange themselves into this state:
+/*
+130 - at 8280 seconds
+130 - at 18683 seconds
+130 - at 29086 seconds
+130 - at 39489 seconds
+130 - at 49892 seconds
+130 - at 60295 seconds
+130 - at 70698 seconds
+130 - at 81101 seconds
+130 - at 91504 seconds
+*/
 function Solve2() {
     let robots = GetRobots();
     const seconds = 100000;
 
-    for (let second = 0; second < seconds; second++) {
+    for (let second = 1; second < seconds; second++) {
         let positions = new Set();
 
         robots.forEach(robot => {
@@ -83,6 +97,6 @@ function Solve2() {
         });
 
         if (crowdedRobots > 0)
-            console.log(crowdedRobots + " - at " + second + 1 + " seconds");
+            console.log(crowdedRobots + " - at " + second + " seconds");
     }
 }
